@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>3D Geometry Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>3D Geometry Visualizer</h1>
+
+        <p>Create Amazing CSS 3D Objects</p>
+
+    </header>
+
+    <main>
+
+        <section class="scene">
+
+            <div id="pyramid">
+
+                <div class="face front"></div>
+
+                <div class="face back"></div>
+
+                <div class="face left"></div>
+
+                <div class="face right"></div>
+
+
+            </div>
+
+        </section>
+
+        <section class="controls">
+
+            <button id="startBtn">
+                Start
+            </button>
+
+            <button id="stopBtn">
+                Stop
+            </button>
+
+            <button id="resetBtn">
+                Reset
+            </button>
+
+            <label>
+
+                Speed
+
+                <input
+                    type="range"
+                    id="speed"
+                    min="1"
+                    max="20"
+                    value="10">
+
+            </label>
+
+            <label>
+
+                Color
+
+                <input
+                    type="color"
+                    id="color"
+                    value="#00ffff">
+
+            </label>
+
+        </section>
+   <section class="info">
+
+        <h3>Live Information</h3>
+
+          <p>X Rotation :
+        <span id="xValue">0</span>°
+         </p>
+
+         <p>Y Rotation :
+        <span id="yValue">0</span>°
+           </p>
+
+            <p>Zoom :
+        <span id="zoomValue">1</span>x
+           </p>
+
+     </section>
+
+      </main>
+
+    <footer>
+
+        Made with HTML CSS JavaScript
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

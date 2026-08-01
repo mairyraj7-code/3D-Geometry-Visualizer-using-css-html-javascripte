@@ -1,0 +1,432 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Body */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+
+    color:white;
+
+}
+
+/* Header */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    font-size:42px;
+
+    color:#00e5ff;
+
+}
+
+header p{
+
+    color:#d1d5db;
+
+    margin-top:10px;
+
+}
+
+/* Main */
+
+main{
+
+    width:90%;
+    max-width:1200px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/* Scene */
+
+.scene{
+
+    width:500px;
+
+    height:400px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1000px;
+
+}
+
+.scene:active{
+
+    cursor:grabbing;
+
+}
+
+/* Pyramid Container */
+
+#pyramid{
+
+    width:200px;
+
+    height:200px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    filter:drop-shadow(0 0 35px cyan);
+
+
+
+}
+
+/* Control Panel */
+
+.controls{
+
+    margin-top:30px;
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:15px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* Buttons */
+
+button{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#00e5ff;
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 20px #00e5ff;
+
+}
+
+/* Labels */
+
+label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    font-size:14px;
+
+}
+
+/* Inputs */
+
+input[type="range"]{
+
+    width:180px;
+
+}
+
+input[type="color"]{
+
+    width:60px;
+
+    height:40px;
+
+    border:none;
+
+    background:none;
+
+}
+
+/* Footer */
+
+footer{
+
+    margin-top:30px;
+
+    color:#cbd5e1;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.scene{
+
+width:100%;
+
+height:300px;
+width:500px;
+height:400px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+perspective:1000px;
+
+cursor:grab;
+user-select:none;
+
+
+}
+
+header h1{
+
+font-size:30px;
+
+}
+
+.controls{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+
+
+
+/* ===========================
+   3D Pyramid
+=========================== */
+
+#pyramid{
+
+    position:relative;
+
+    width:200px;
+
+    height:200px;
+
+    transform-style:preserve-3d;
+    
+   
+
+
+}
+
+/* Triangle */
+
+.face{
+
+    position:absolute;
+
+    width:0;
+    height:0;
+
+    border-left:100px solid transparent;
+    border-right:100px solid transparent;
+    border-bottom:180px solid;
+
+    transform-origin:50% 100%;
+
+    opacity:.95;
+
+    filter:drop-shadow(0 0 15px rgba(255,255,255,.25));
+
+}
+
+/* Front */
+
+.front{
+
+
+    border-bottom-color:#00e5ff;
+
+    transform:
+    rotateY(0deg)
+    translateZ(58px)
+    rotateX(30deg);
+
+}
+
+/* Back */
+
+.back{
+
+    border-bottom-color:#0099ff;
+
+    transform:
+    rotateY(180deg)
+    translateZ(58px)
+    rotateX(30deg);
+
+}
+
+/* Left */
+
+.left{
+
+    border-bottom-color:#00ff99;
+
+
+    transform:
+    rotateY(-90deg)
+    translateZ(58px)
+    rotateX(30deg);
+
+}
+
+/* Right */
+
+.right{
+
+    border-bottom-color:#7c3aed;
+
+    transform:
+    rotateY(90deg)
+    translateZ(58px)
+    rotateX(30deg);
+
+}
+
+
+
+
+
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:-200px;
+top:-200px;
+
+width:500px;
+height:500px;
+
+background:#00e5ff;
+
+filter:blur(180px);
+
+opacity:.15;
+
+z-index:-1;
+
+}
+
+/* Live Information */
+
+.info{
+
+    width:350px;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    text-align:center;
+
+}
+
+.info h3{
+
+    color:#00e5ff;
+
+    margin-bottom:15px;
+
+}
+
+.info p{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+}
+
+@keyframes rotate {
+
+    0%{
+        transform: rotateX(-25deg) rotateY(0deg);
+    }
+
+    100%{
+        transform: rotateX(-25deg) rotateY(360deg);
+    }
+
+}
